@@ -46,7 +46,12 @@ function deleteTask(list, Index) {
 }
 
 function askForAction(list, Index) {
-
+    const actions = {
+        markAsDone,
+        markAsUnDone,
+        deleteTask,
+        updateTitle
+    }
     inquirer.prompt({
         type: "list",
         name: "action",
@@ -56,23 +61,11 @@ function askForAction(list, Index) {
             {name: "completed", value: "markAsDone"},
             {name: "undone", value: "markAsUnDone"},
             {name: "rename", value: "updateTitle"},
-            {name: "- deleteTask", value: "deleteTask"},
+            {name: "- delete", value: "deleteTask"},
         ]
     }).then((answer2) => {
-        switch (answer2.action) {
-            case "markAsDone":
-                markAsDone(list, Index);
-                break;
-            case "markAsUnDone":
-                markAsUnDone(list, Index);
-                break;
-            case "updateTitle":
-                updateTitle(list, Index);
-                break;
-            case "deleteTask":
-                deleteTask(list, Index);
-                break;
-        }
+        const action = actions[answer2.action];
+        action && action(list, Index);
     });
 }
 
