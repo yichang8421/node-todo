@@ -1,11 +1,13 @@
+#!/usr/bin/env node
+
 const {Command} = require('commander');
 const program = new Command();
 const api = require("./index.js");
-
+const pkg = require("./package.json");
 
 // 声明命令
 program
-    .option('-x, --xxx', 'this is x')
+    .version(pkg.version)
 
 // 声明子命令
 program

@@ -1,7 +1,13 @@
 {
-  "name": "node-todo-1",
+  "name": "todo-task",
+  "bin": {
+    "t": "cli.js"
+  },
+  "files": [
+    "*.js"
+  ],
   "version": "0.0.1",
-  "main": "cli.js",
+  "main": "index.js",
   "author": "andy8421",
   "license": "MIT",
   "dependencies": {
