@@ -10,6 +10,6 @@ module.exports.add = async (title) => {
     await db.write(list);
 }
 
-module.exports.clear = (title) => {
-    console.log("clear");
+module.exports.clear = async () => {
+    await db.write([]);
 }

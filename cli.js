@@ -20,7 +20,7 @@ program
     .description('clear all tasks')
     .action(() => {
         console.log("clear all");
-        api.clear("claer");
+        api.clear();
     });
 
 program.parse(process.argv);
