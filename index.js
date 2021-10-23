@@ -7,7 +7,7 @@ module.exports.add = async (title) => {
     // 向列表中添加任务
     list.push({title, done: false});
     // 将列表存入本地文件中
-    db.write(list);
+    await db.write(list);
 }
 
 module.exports.clear = (title) => {
