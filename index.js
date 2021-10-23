@@ -55,9 +55,9 @@ function askForAction(list, Index) {
     inquirer.prompt({
         type: "list",
         name: "action",
-        message: "Which task to operate ",
+        message: "select action",
         choices: [
-            {name: "◀ come back", value: "quit"},
+            {name: "<= come back", value: "quit"},
             {name: "completed", value: "markAsDone"},
             {name: "undone", value: "markAsUnDone"},
             {name: "rename", value: "updateTitle"},
@@ -90,9 +90,9 @@ function printTasks(list) {
         .prompt({
             type: 'list',
             name: 'index',
-            message: 'Please select completed tasks:',
+            message: 'Which task to operate',
             choices: [
-                {name: "◀ come back", value: "-1"},
+                {name: "<- come back", value: "-1"},
                 ...list.map((task, index) => {
                     return {
                         name: `${task.done ? "[✔]" : "[_]"} ${index + 1}: ${task.title}`,
